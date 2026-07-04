@@ -20,6 +20,49 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', toggleHeaderStyle, { passive: true });
 
   /* ------------------------------------------------------------------
+     1b. SCROLL PROGRESS BAR — fills across the top as the page is read
+  ------------------------------------------------------------------ */
+  const scrollProgress = document.getElementById('scrollProgress');
+  function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = pct + '%';
+  }
+  updateScrollProgress();
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  window.addEventListener('resize', updateScrollProgress);
+
+  /* ------------------------------------------------------------------
+     1c. CURSOR GLOW — soft light that follows the pointer with a gentle
+         lag (lerp), skipped entirely on touch devices via CSS media query
+  ------------------------------------------------------------------ */
+  const cursorGlow = document.getElementById('cursorGlow');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches && !prefersReducedMotion;
+
+  if (cursorGlow && isFinePointer) {
+    let targetX = window.innerWidth / 2, targetY = window.innerHeight / 2;
+    let currentX = targetX, currentY = targetY;
+
+    window.addEventListener('mousemove', (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      cursorGlow.classList.add('active');
+    });
+    document.addEventListener('mouseleave', () => cursorGlow.classList.remove('active'));
+
+    function animateGlow() {
+      // Simple easing toward the true cursor position for a soft, trailing feel
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+      cursorGlow.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+      requestAnimationFrame(animateGlow);
+    }
+    animateGlow();
+  }
+
+  /* ------------------------------------------------------------------
      2. MOBILE HAMBURGER MENU
   ------------------------------------------------------------------ */
   const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -72,12 +115,43 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------
      4. SCROLL-TRIGGERED REVEAL ANIMATIONS (Intersection Observer)
   ------------------------------------------------------------------ */
+  // Split the hero headline into individually-animatable words before
+  // anything is observed, so the stagger is ready the moment it's visible
+  const heroTitle = document.querySelector('.hero-title');
+  function wrapWordsForStagger(root) {
+    let wordIndex = 0;
+    function walk(node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(part => {
+          if (part.trim() === '') {
+            frag.appendChild(document.createTextNode(part));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.style.setProperty('--word-index', wordIndex++);
+            span.textContent = part;
+            frag.appendChild(span);
+          }
+        });
+        node.replaceWith(frag);
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        Array.from(node.childNodes).forEach(walk);
+      }
+    }
+    Array.from(root.childNodes).forEach(walk);
+  }
+  if (heroTitle) wrapWordsForStagger(heroTitle);
+
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Stagger children slightly for a smoother group reveal
         entry.target.classList.add('in-view');
+        // The hero headline gets its word-by-word stagger triggered here too
+        if (entry.target === heroTitle) {
+          requestAnimationFrame(() => heroTitle.classList.add('words-in'));
+        }
         obs.unobserve(entry.target);
       }
     });
@@ -97,6 +171,73 @@ document.addEventListener('DOMContentLoaded', () => {
         heroImg.style.transform = `scale(1.08) translateY(${scrollY * 0.15}px)`;
       }
     }, { passive: true });
+  }
+
+  /* ------------------------------------------------------------------
+     5b. COUNT-UP STAT ANIMATION — numbers tick up once when scrolled in
+  ------------------------------------------------------------------ */
+  const countEls = document.querySelectorAll('[data-count-to]');
+  const countObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.getAttribute('data-count-to'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1600;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        // Ease-out for a natural deceleration into the final number
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.round(target * eased);
+        el.textContent = value.toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  countEls.forEach(el => countObserver.observe(el));
+
+  /* ------------------------------------------------------------------
+     5c. MAGNETIC BUTTONS — CTA buttons ease slightly toward the cursor
+  ------------------------------------------------------------------ */
+  if (isFinePointer) {
+    document.querySelectorAll('[data-magnetic]').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const relX = e.clientX - rect.left - rect.width / 2;
+        const relY = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${relX * 0.25}px, ${relY * 0.4}px)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0)';
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     5d. 3D TILT + SPOTLIGHT — service, doctor and stat cards
+  ------------------------------------------------------------------ */
+  if (isFinePointer) {
+    document.querySelectorAll('[data-tilt]').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width;   // 0 -> 1 across the card
+        const py = (e.clientY - rect.top) / rect.height;    // 0 -> 1 down the card
+
+        const tiltX = (py - 0.5) * -8;  // tilt up/down, max 4deg
+        const tiltY = (px - 0.5) * 8;   // tilt left/right, max 4deg
+
+        card.style.transform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
+        card.style.setProperty('--mx', `${px * 100}%`);
+        card.style.setProperty('--my', `${py * 100}%`);
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
   }
 
   /* ------------------------------------------------------------------
@@ -125,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCarousel() {
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
       dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === currentSlide));
     }
 
     function goToSlide(index) {
@@ -152,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
     carousel.addEventListener('mouseleave', startAutoplay);
 
+    updateCarousel(); // mark the first slide active before autoplay begins
     startAutoplay();
   }
 
