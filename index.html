@@ -15,6 +15,12 @@
 </head>
 <body>
 
+<!-- ============ SCROLL PROGRESS BAR ============ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ============ CURSOR GLOW (pointer devices only) ============ -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
 <!-- ============ SKIP LINK (Accessibility) ============ -->
 <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -46,7 +52,7 @@
     </nav>
 
     <div class="header-actions">
-      <a href="#appointment" class="btn btn-primary btn-small">Book Appointment</a>
+      <a href="#appointment" class="btn btn-primary btn-small" data-magnetic>Book Appointment</a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
@@ -78,6 +84,8 @@
       <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1600&q=80"
            alt="" class="hero-img" id="heroImg">
       <div class="hero-overlay"></div>
+      <div class="hero-mesh"></div>
+      <div class="hero-grain"></div>
     </div>
 
     <div class="hero-content">
@@ -91,21 +99,21 @@
         dentistry under one roof in Bahadurabad, Karachi.
       </p>
       <div class="hero-actions reveal">
-        <a href="#appointment" class="btn btn-primary">Book Appointment</a>
-        <a href="#services" class="btn btn-ghost">Explore Services</a>
+        <a href="#appointment" class="btn btn-primary" data-magnetic>Book Appointment</a>
+        <a href="#services" class="btn btn-ghost" data-magnetic>Explore Services</a>
       </div>
 
       <dl class="hero-stats reveal">
         <div class="hero-stat">
-          <dt>18+</dt>
+          <dt data-count-to="18" data-suffix="+">0</dt>
           <dd>Years in practice</dd>
         </div>
         <div class="hero-stat">
-          <dt>40,000+</dt>
+          <dt data-count-to="40000" data-suffix="+">0</dt>
           <dd>Smiles treated</dd>
         </div>
         <div class="hero-stat">
-          <dt>98%</dt>
+          <dt data-count-to="98" data-suffix="%">0</dt>
           <dd>Patient satisfaction</dd>
         </div>
       </dl>
@@ -149,20 +157,20 @@
         </p>
 
         <div class="stat-row reveal">
-          <div class="stat-card">
-            <span class="stat-number">18+</span>
+          <div class="stat-card" data-tilt>
+            <span class="stat-number" data-count-to="18" data-suffix="+">0</span>
             <span class="stat-label">Years of practice</span>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">40k+</span>
+          <div class="stat-card" data-tilt>
+            <span class="stat-number" data-count-to="40" data-suffix="k+">0</span>
             <span class="stat-label">Patients treated</span>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">98%</span>
+          <div class="stat-card" data-tilt>
+            <span class="stat-number" data-count-to="98" data-suffix="%">0</span>
             <span class="stat-label">Success rate</span>
           </div>
-          <div class="stat-card">
-            <span class="stat-number">12</span>
+          <div class="stat-card" data-tilt>
+            <span class="stat-number" data-count-to="12" data-suffix="">0</span>
             <span class="stat-label">Specialist services</span>
           </div>
         </div>
@@ -184,7 +192,7 @@
 
       <div class="services-grid">
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" data-tilt>
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M12 3c-2 0-2.8 1-4.4 1C5.8 4 4.4 5.7 4.4 8.3c0 3 1.1 5.8 2.1 8.3.6 1.6 1.1 3.2 2.1 3.2 1.3 0 1.2-3.8 3.5-3.8s2.2 3.8 3.5 3.8c1 0 1.5-1.6 2.1-3.2 1-2.5 2.1-5.3 2.1-8.3C19.8 5.7 18.4 4 16.4 4 14.8 4 14 3 12 3z" stroke="currentColor" stroke-width="1.5"/></svg>
           </span>
@@ -192,7 +200,7 @@
           <p>Routine exams, scaling and polishing to catch issues early and keep your smile healthy year-round.</p>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" data-tilt>
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M4 12h4l2-6 4 12 2-6h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </span>
@@ -200,7 +208,7 @@
           <p>Comfortable, single-visit endodontic treatment to relieve pain and save the natural tooth.</p>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" data-tilt>
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M5 8c1.5 0 1.5-1.5 3-1.5S9.5 8 11 8s1.5-1.5 3-1.5S15.5 8 17 8s1.5-1.5 3-1.5M5 14c1.5 0 1.5-1.5 3-1.5s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
@@ -208,7 +216,7 @@
           <p>Traditional braces and clear aligners for children and adults, planned around your timeline.</p>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" data-tilt>
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
@@ -216,7 +224,7 @@
           <p>Same-day appointments for dental trauma, sudden pain or broken restorations.</p>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" data-tilt>
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7l7-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           </span>
@@ -224,7 +232,7 @@
           <p>Permanent, natural-looking tooth replacement with titanium implants and precision crowns.</p>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" data-tilt>
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M12 21c-4-2-8-5-8-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5-4 8-8 10-.7.35-1.3.35-2 0z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           </span>
@@ -232,7 +240,7 @@
           <p>Whitening, veneers and bonding designed around your natural facial proportions.</p>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" data-tilt>
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M9 6a3 3 0 1 1 6 0c0 2-1 2.5-1 4.5V17a2 2 0 1 1-4 0v-6.5C10 8.5 9 8 9 6z" stroke="currentColor" stroke-width="1.5"/></svg>
           </span>
@@ -240,7 +248,7 @@
           <p>Gentle, patient-first care that helps children build a lifetime of good dental habits.</p>
         </article>
 
-        <article class="service-card reveal">
+        <article class="service-card reveal" data-tilt>
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </span>
@@ -266,7 +274,7 @@
 
       <div class="doctors-grid">
 
-        <article class="doctor-card reveal">
+        <article class="doctor-card reveal" data-tilt>
           <div class="doctor-photo">
             <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=500&q=80" alt="Dr. Attiya, Lead Dentist and Founder">
           </div>
@@ -283,7 +291,7 @@
           </div>
         </article>
 
-        <article class="doctor-card reveal">
+        <article class="doctor-card reveal" data-tilt>
           <div class="doctor-photo">
             <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&q=80" alt="Dr. Bilal Ahmed, Endodontist">
           </div>
@@ -300,7 +308,7 @@
           </div>
         </article>
 
-        <article class="doctor-card reveal">
+        <article class="doctor-card reveal" data-tilt>
           <div class="doctor-photo">
             <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=500&q=80" alt="Dr. Sana Rizvi, Orthodontist">
           </div>
@@ -317,7 +325,7 @@
           </div>
         </article>
 
-        <article class="doctor-card reveal">
+        <article class="doctor-card reveal" data-tilt>
           <div class="doctor-photo">
             <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=500&q=80" alt="Dr. Omar Farooq, Pediatric Dentist">
           </div>
