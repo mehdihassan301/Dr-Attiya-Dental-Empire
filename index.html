@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Attiya's Dental Empire — Precision Dentistry, Karachi</title>
+<meta name="description" content="Dr. Attiya's Dental Empire — premium dental care in Bahadurabad, Karachi. General dentistry, cosmetic care, implants, orthodontics and more, delivered with precision and warmth.">
+
+<!-- Google Fonts: Fraunces (display serif), Manrope (body sans), IBM Plex Mono (utility/data) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ SKIP LINK (Accessibility) ============ -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============ HEADER / NAVBAR ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="brand" aria-label="Dr. Attiya's Dental Empire — Home">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- Signature tooth-outline mark -->
+        <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+          <path d="M20 5c-3.2 0-4.6 1.7-7.4 1.7-3.4 0-5.6 2.8-5.6 7 0 5 1.9 9.7 3.5 13.9 1 2.7 1.9 5.4 3.6 5.4 2.1 0 2-6.4 5.9-6.4s3.8 6.4 5.9 6.4c1.7 0 2.6-2.7 3.6-5.4 1.6-4.2 3.5-8.9 3.5-13.9 0-4.2-2.2-7-5.6-7-2.8 0-4.2-1.7-7.4-1.7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-title">Dr. Attiya's</span>
+        <span class="brand-sub">Dental&nbsp;Empire</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#doctors" class="nav-link">Doctors</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#appointment" class="btn btn-primary btn-small">Book Appointment</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <ul>
+    <li><a href="#home" class="nav-link">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#services" class="nav-link">Services</a></li>
+    <li><a href="#doctors" class="nav-link">Doctors</a></li>
+    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+    <li><a href="#faq" class="nav-link">FAQ</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+    <li><a href="#appointment" class="btn btn-primary btn-block">Book Appointment</a></li>
+  </ul>
+</div>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-media" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1600&q=80"
+           alt="" class="hero-img" id="heroImg">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow reveal">Bahadurabad, Karachi · Est. Trusted Dental Care</p>
+      <h1 class="hero-title reveal">
+        Smiles, <em>engineered</em><br> with care.
+      </h1>
+      <p class="hero-subtitle reveal">
+        Dr. Attiya's Dental Empire pairs precision clinical technique with a
+        calm, unhurried chairside manner — general, cosmetic and surgical
+        dentistry under one roof in Bahadurabad, Karachi.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#appointment" class="btn btn-primary">Book Appointment</a>
+        <a href="#services" class="btn btn-ghost">Explore Services</a>
+      </div>
+
+      <dl class="hero-stats reveal">
+        <div class="hero-stat">
+          <dt>18+</dt>
+          <dd>Years in practice</dd>
+        </div>
+        <div class="hero-stat">
+          <dt>40,000+</dt>
+          <dd>Smiles treated</dd>
+        </div>
+        <div class="hero-stat">
+          <dt>98%</dt>
+          <dd>Patient satisfaction</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- Signature smile-arc divider -->
+    <svg class="smile-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C 120,90 240,90 360,55 C 480,20 600,20 720,55 C 840,90 960,90 1080,55 C 1200,20 1320,20 1440,55 L1440,100 L0,100 Z"></path>
+    </svg>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="section-inner about-grid">
+      <div class="about-image reveal">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80"
+             alt="Modern dental treatment room with clean equipment at Dr. Attiya's Dental Empire">
+        <div class="about-image-badge">
+          <span class="badge-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="22" height="22" fill="none"><path d="M20 5c-3.2 0-4.6 1.7-7.4 1.7-3.4 0-5.6 2.8-5.6 7 0 5 1.9 9.7 3.5 13.9 1 2.7 1.9 5.4 3.6 5.4 2.1 0 2-6.4 5.9-6.4s3.8 6.4 5.9 6.4c1.7 0 2.6-2.7 3.6-5.4 1.6-4.2 3.5-8.9 3.5-13.9 0-4.2-2.2-7-5.6-7-2.8 0-4.2-1.7-7.4-1.7z" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          Karachi's trusted dental address since day one
+        </div>
+      </div>
+
+      <div class="about-copy">
+        <p class="eyebrow reveal">Our story</p>
+        <h2 class="reveal">Built on precision, run with warmth.</h2>
+        <p class="reveal">
+          Dr. Attiya's Dental Empire began as a single chair on Siraj-ud-Daula
+          Road with one promise: treat every patient like family, and treat
+          every tooth like it matters. Today it is a full dental practice in
+          Bahadurabad, Karachi — but the promise hasn't changed.
+        </p>
+        <p class="reveal">
+          Our clinicians combine internationally trained technique with an
+          unhurried, listen-first approach, so procedures that used to feel
+          intimidating start to feel routine. From routine cleanings to full
+          smile reconstructions, every plan is built around your comfort as
+          much as your outcome.
+        </p>
+
+        <div class="stat-row reveal">
+          <div class="stat-card">
+            <span class="stat-number">18+</span>
+            <span class="stat-label">Years of practice</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">40k+</span>
+            <span class="stat-label">Patients treated</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Success rate</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Specialist services</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow reveal">What we treat</p>
+        <h2 class="reveal">Complete dental care, one address.</h2>
+        <p class="section-lead reveal">
+          Every service below is delivered chairside by our own clinicians —
+          no outsourcing, no unfamiliar faces mid-treatment.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M12 3c-2 0-2.8 1-4.4 1C5.8 4 4.4 5.7 4.4 8.3c0 3 1.1 5.8 2.1 8.3.6 1.6 1.1 3.2 2.1 3.2 1.3 0 1.2-3.8 3.5-3.8s2.2 3.8 3.5 3.8c1 0 1.5-1.6 2.1-3.2 1-2.5 2.1-5.3 2.1-8.3C19.8 5.7 18.4 4 16.4 4 14.8 4 14 3 12 3z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          <h3>General Checkup &amp; Cleaning</h3>
+          <p>Routine exams, scaling and polishing to catch issues early and keep your smile healthy year-round.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M4 12h4l2-6 4 12 2-6h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Root Canal Therapy</h3>
+          <p>Comfortable, single-visit endodontic treatment to relieve pain and save the natural tooth.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M5 8c1.5 0 1.5-1.5 3-1.5S9.5 8 11 8s1.5-1.5 3-1.5S15.5 8 17 8s1.5-1.5 3-1.5M5 14c1.5 0 1.5-1.5 3-1.5s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Orthodontics &amp; Braces</h3>
+          <p>Traditional braces and clear aligners for children and adults, planned around your timeline.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Emergency Care</h3>
+          <p>Same-day appointments for dental trauma, sudden pain or broken restorations.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7l7-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Dental Implants</h3>
+          <p>Permanent, natural-looking tooth replacement with titanium implants and precision crowns.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M12 21c-4-2-8-5-8-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5-4 8-8 10-.7.35-1.3.35-2 0z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Cosmetic Dentistry</h3>
+          <p>Whitening, veneers and bonding designed around your natural facial proportions.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><path d="M9 6a3 3 0 1 1 6 0c0 2-1 2.5-1 4.5V17a2 2 0 1 1-4 0v-6.5C10 8.5 9 8 9 6z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          <h3>Pediatric Dentistry</h3>
+          <p>Gentle, patient-first care that helps children build a lifetime of good dental habits.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Oral Surgery</h3>
+          <p>Wisdom tooth extraction and minor surgical procedures under local anaesthesia.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOCTORS / TEAM ============ -->
+  <section class="doctors" id="doctors">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow reveal">Meet the team</p>
+        <h2 class="reveal">The hands behind the empire.</h2>
+        <p class="section-lead reveal">
+          A small, senior team — so the clinician who plans your treatment is
+          the one who delivers it.
+        </p>
+      </div>
+
+      <div class="doctors-grid">
+
+        <article class="doctor-card reveal">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=500&q=80" alt="Dr. Attiya, Lead Dentist and Founder">
+          </div>
+          <h3>Dr. Attiya Khan</h3>
+          <p class="doctor-role">Founder &amp; Lead Dentist — Cosmetic &amp; Restorative</p>
+          <p class="doctor-bio">18 years of clinical practice with a focus on smile design and full-mouth rehabilitation.</p>
+          <div class="doctor-social">
+            <a href="#contact" aria-label="Contact Dr. Attiya Khan">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a href="tel:+922100000000" aria-label="Call Dr. Attiya Khan">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M6 3h3l2 5-2 1a10 10 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2C11 20 4 13 4 5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="doctor-card reveal">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&q=80" alt="Dr. Bilal Ahmed, Endodontist">
+          </div>
+          <h3>Dr. Bilal Ahmed</h3>
+          <p class="doctor-role">Endodontist — Root Canal Specialist</p>
+          <p class="doctor-bio">Focused on pain-free, single-visit root canal therapy using rotary technique.</p>
+          <div class="doctor-social">
+            <a href="#contact" aria-label="Contact Dr. Bilal Ahmed">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a href="tel:+922100000000" aria-label="Call Dr. Bilal Ahmed">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M6 3h3l2 5-2 1a10 10 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2C11 20 4 13 4 5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="doctor-card reveal">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=500&q=80" alt="Dr. Sana Rizvi, Orthodontist">
+          </div>
+          <h3>Dr. Sana Rizvi</h3>
+          <p class="doctor-role">Orthodontist — Braces &amp; Clear Aligners</p>
+          <p class="doctor-bio">Plans bite-correction and alignment cases for both children and adults.</p>
+          <div class="doctor-social">
+            <a href="#contact" aria-label="Contact Dr. Sana Rizvi">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a href="tel:+922100000000" aria-label="Call Dr. Sana Rizvi">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M6 3h3l2 5-2 1a10 10 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2C11 20 4 13 4 5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="doctor-card reveal">
+          <div class="doctor-photo">
+            <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=500&q=80" alt="Dr. Omar Farooq, Pediatric Dentist">
+          </div>
+          <h3>Dr. Omar Farooq</h3>
+          <p class="doctor-role">Pediatric Dentist</p>
+          <p class="doctor-bio">Specialises in gentle, first-visit-friendly care for young patients.</p>
+          <div class="doctor-social">
+            <a href="#contact" aria-label="Contact Dr. Omar Farooq">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a href="tel:+922100000000" aria-label="Call Dr. Omar Farooq">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M6 3h3l2 5-2 1a10 10 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2C11 20 4 13 4 5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow reveal">Patient stories</p>
+        <h2 class="reveal">Karachi trusts us with their smiles.</h2>
+      </div>
+
+      <div class="carousel reveal" id="testimonialCarousel">
+        <div class="carousel-track" id="carouselTrack">
+
+          <figure class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"I was terrified of root canals until Dr. Bilal walked me through every step. Zero pain, zero anxiety on the next visit."</blockquote>
+            <figcaption>— Ayesha M., PECHS</figcaption>
+          </figure>
+
+          <figure class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"My son used to cry at the dentist. Dr. Omar made his first cleaning feel like a game. We're back every six months, no fuss."</blockquote>
+            <figcaption>— Hassan R., Bahadurabad</figcaption>
+          </figure>
+
+          <figure class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Got veneers done before my wedding. Dr. Attiya matched the shade so naturally, nobody could tell they weren't original."</blockquote>
+            <figcaption>— Zara K., Clifton</figcaption>
+          </figure>
+
+          <figure class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote>"Clean, organised clinic and appointments always run on time. Rare to find in Karachi and worth the drive across town."</blockquote>
+            <figcaption>— Imran S., Gulshan</figcaption>
+          </figure>
+
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevBtn" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="carousel-dots" id="carouselDots"></div>
+          <button class="carousel-btn" id="nextBtn" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery" id="gallery">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow reveal">Inside the clinic</p>
+        <h2 class="reveal">A space designed to feel calm.</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=85">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" alt="Treatment room 1">
+        </button>
+        <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1400&q=85">
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=500&q=80" alt="Reception area">
+        </button>
+        <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1400&q=85">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=500&q=80" alt="Dental equipment close-up">
+        </button>
+        <button class="gallery-item reveal" data-full="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=85">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=500&q=80" alt="Consultation room">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPOINTMENT BOOKING ============ -->
+  <section class="appointment" id="appointment">
+    <div class="section-inner appointment-grid">
+      <div class="appointment-copy reveal">
+        <p class="eyebrow">Book a visit</p>
+        <h2>Reserve your appointment.</h2>
+        <p>
+          Tell us a little about what you need and a preferred time. Our
+          front desk will confirm your slot within one business day.
+        </p>
+        <ul class="appointment-points">
+          <li>Confirmation by call or email within 24 hours</li>
+          <li>Free initial consultation for new patients</li>
+          <li>Flexible evening &amp; weekend slots available</li>
+        </ul>
+      </div>
+
+      <form class="appointment-form reveal" id="appointmentForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name" aria-describedby="fullNameError">
+            <span class="field-error" id="fullNameError" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="emailError">
+            <span class="field-error" id="emailError" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel" aria-describedby="phoneError">
+            <span class="field-error" id="phoneError" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="department">Department</label>
+            <select id="department" name="department" required aria-describedby="departmentError">
+              <option value="" disabled selected>Select a service</option>
+              <option>General Checkup &amp; Cleaning</option>
+              <option>Root Canal Therapy</option>
+              <option>Orthodontics &amp; Braces</option>
+              <option>Dental Implants</option>
+              <option>Cosmetic Dentistry</option>
+              <option>Pediatric Dentistry</option>
+              <option>Oral Surgery</option>
+              <option>Emergency Care</option>
+            </select>
+            <span class="field-error" id="departmentError" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="prefDate">Preferred date</label>
+            <input type="date" id="prefDate" name="prefDate" required aria-describedby="prefDateError">
+            <span class="field-error" id="prefDateError" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="prefTime">Preferred time</label>
+            <input type="time" id="prefTime" name="prefTime" required aria-describedby="prefTimeError">
+            <span class="field-error" id="prefTimeError" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message <span class="optional">(optional)</span></label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your symptoms or concerns..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Request appointment</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="section-inner faq-inner">
+      <div class="section-head">
+        <p class="eyebrow reveal">Good to know</p>
+        <h2 class="reveal">Frequently asked questions.</h2>
+      </div>
+
+      <div class="accordion" id="accordion">
+        <div class="accordion-item reveal">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Do I need a referral to book an appointment?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>No referral needed. You can book directly through this website, by phone, or by walking into the clinic during working hours.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>What should I bring to my first visit?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>Please bring a valid CNIC, any previous dental records or X-rays, and a list of current medications if applicable.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Do you treat dental emergencies?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>Yes — call our front desk directly and we will do our best to fit you in the same day for urgent pain, swelling or trauma.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>Is the clinic suitable for young children?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>Absolutely. Dr. Omar Farooq specialises in pediatric care, and we keep a dedicated, calmer time slot for first-time young patients.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item reveal">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span>What payment methods do you accept?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-panel">
+            <p>We accept cash, all major debit/credit cards, and bank transfer. Payment plans are available for larger treatment plans.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / MAP STRIP ============ -->
+  <section class="contact" id="contact">
+    <div class="section-inner contact-grid">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Visit us</p>
+        <h2>Find the clinic.</h2>
+        <address>
+          Bungalow No. 213, Siraj-ud-Daula Road,<br>
+          Opposite Children Park, D.M.C.H.S.,<br>
+          Near Naheed Super Store, Bahadurabad,<br>
+          Darul Aman Society, P.E.C.H.S.,<br>
+          Karachi, 74600, Pakistan
+        </address>
+        <p><a href="tel:+922100000000">+92 21 0000 0000</a> &nbsp;·&nbsp; <a href="mailto:info@drattiyadental.com">info@drattiyadental.com</a></p>
+      </div>
+      <div class="contact-map reveal">
+        <iframe
+          title="Map location of Dr. Attiya's Dental Empire, Bahadurabad, Karachi"
+          src="https://maps.google.com/maps?q=Bahadurabad%20Karachi&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="section-inner footer-grid">
+
+    <div class="footer-col footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="30" height="30" fill="none"><path d="M20 5c-3.2 0-4.6 1.7-7.4 1.7-3.4 0-5.6 2.8-5.6 7 0 5 1.9 9.7 3.5 13.9 1 2.7 1.9 5.4 3.6 5.4 2.1 0 2-6.4 5.9-6.4s3.8 6.4 5.9 6.4c1.7 0 2.6-2.7 3.6-5.4 1.6-4.2 3.5-8.9 3.5-13.9 0-4.2-2.2-7-5.6-7-2.8 0-4.2-1.7-7.4-1.7z" stroke="currentColor" stroke-width="1.6"/></svg>
+      </span>
+      <p>Dr. Attiya's Dental Empire — precision dentistry with a calm, human touch, in the heart of Bahadurabad, Karachi.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h3l1-3h-4V9c0-.6.4-1 1-1z" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.3"/><circle cx="16.2" cy="7.8" r="0.8" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 19l1.3-3.8A7.5 7.5 0 1 1 9.9 18L5 19z" stroke="currentColor" stroke-width="1.3"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick links</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Working hours</h4>
+      <ul class="hours-list">
+        <li><span>Mon – Sat</span><span>10:00 – 20:00</span></li>
+        <li><span>Sunday</span><span>Emergency only</span></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Dental tips and clinic updates, once a month, no spam.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <label for="newsletterEmail" class="visually-hidden">Email address</label>
+        <input type="email" id="newsletterEmail" placeholder="Your email address" required>
+        <button type="submit" aria-label="Subscribe">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <p class="form-status" id="newsletterStatus" role="status" aria-live="polite"></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Dr. Attiya's Dental Empire. All rights reserved.</p>
+    <p>Bahadurabad, Karachi, Pakistan</p>
+  </div>
+</footer>
+
+<!-- ============ BACK TO TOP ============ -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
